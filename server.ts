@@ -104,6 +104,15 @@ app.delete('/api/devotionals/:id', (req: Request, res: Response) => {
   }
 });
 
+app.get('/api/devotionals', (req: Request, res: Response) => {
+  try {
+    const statement = db.prepare('SELECT * FROM devotionals WHERE deleted_at IS NULL ORDER BY created_at DESC');
+    const devotionals = statement.all();
+    res.status(200).json(devotionals);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to retrieve devotionals.' });
+  }
+});
 
 
 app.listen(PORT, () => {
