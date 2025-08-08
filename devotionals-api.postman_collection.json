@@ -1,0 +1,338 @@
+{
+	"info": {
+		"_postman_id": "92c440b7-f8b5-446c-9041-946ea38cfb01",
+		"name": "devotionals-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46842633"
+	},
+	"item": [
+		{
+			"name": "Get all devotionals",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "get all devotionals",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/devotionals",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"devotionals"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "681"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2a9-ukb25nhUgzYBzIONEBaQ0Hk9N14\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 08 Aug 2025 03:21:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 5,\n        \"verse\": \"John 3:16\",\n        \"content\": \"God loved the world\",\n        \"created_at\": \"2025-08-06 14:50:41\",\n        \"updated_at\": null,\n        \"deleted_at\": null\n    },\n    {\n        \"id\": 4,\n        \"verse\": \"John 3:16\",\n        \"content\": \"God loved the world\",\n        \"created_at\": \"2025-08-06 14:26:16\",\n        \"updated_at\": null,\n        \"deleted_at\": null\n    },\n    {\n        \"id\": 3,\n        \"verse\": \"John 3:16\",\n        \"content\": \"For God so loved the world...\",\n        \"created_at\": \"2025-08-06 14:25:52\",\n        \"updated_at\": null,\n        \"deleted_at\": null\n    },\n    {\n        \"id\": 2,\n        \"verse\": \"John 3:16\",\n        \"content\": \"For God so loved the world...\",\n        \"created_at\": \"2025-08-06 14:25:29\",\n        \"updated_at\": null,\n        \"deleted_at\": null\n    },\n    {\n        \"id\": 1,\n        \"verse\": \"John 3:16\",\n        \"content\": \"God loved the world\",\n        \"created_at\": \"2025-08-06 08:47:09\",\n        \"updated_at\": null,\n        \"deleted_at\": null\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get one devotional",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "get devotional by id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/devotionals/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"devotionals",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "131"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"83-5acmyAOy+Oh8p/A7LHYfTLLAukc\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 08 Aug 2025 03:25:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"verse\": \"John 3:16\",\n    \"content\": \"God loved the world\",\n    \"created_at\": \"2025-08-06 08:47:09\",\n    \"updated_at\": null,\n    \"deleted_at\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "create a devotional",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "create a devotional",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"verse\": \"Psalm 23:1\",\r\n  \"content\": \"The Lord is my shepherd; I shall not want.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/devotionals",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"devotionals"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "54"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"36-//LWsMignhIUJqik2IvhpgbvYd0\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 08 Aug 2025 03:46:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Devotional created successfully.\",\n    \"id\": 12\n}"
+				}
+			]
+		},
+		{
+			"name": "soft delete devotional",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "soft delete",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/devotionals/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"devotionals",
+								"3"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 08 Aug 2025 03:48:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "test endpoint",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "final check",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/devotionals",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"devotionals"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1697"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"6a1-w7ZNKhmd4Wc8n2tUVoYNkDMQiYA\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 08 Aug 2025 03:50:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 12,\n        \"verse\": \"Psalm 23:1\",\n        \"content\": \"The Lord is my shepherd; I shall not want.\",\n        \"created_at\": \"2025-08-08 03:46:32\",\n        \"updated_at\": null,\n        \"deleted_at\": null\n    },\n    {\n        \"id\": 6,\n        \"verse\": \"John 3:16\",\n        \"content\": \"God loved the world\",\n        \"created_at\": \"2025-08-08 02:51:30\",\n        \"updated_at\": null,\n        \"deleted_at\": null\n    },\n    {\n        \"id\": 7,\n        \"verse\": \"Psalm 23:1\",\n        \"content\": \"The Lord is my shepherd; I shall not want.\",\n        \"created_at\": \"2025-08-08 02:51:30\",\n        \"updated_at\": null,\n        \"deleted_at\": null\n    },\n    {\n        \"id\": 8,\n        \"verse\": \"Philippians 4:13\",\n        \"content\": \"I can do all things through Christ who strengthens me.\",\n        \"created_at\": \"2025-08-08 02:51:30\",\n        \"updated_at\": null,\n        \"deleted_at\": null\n    },\n    {\n        \"id\": 9,\n        \"verse\": \"Romans 8:28\",\n        \"content\": \"All things work together for good to those who love God.\",\n        \"created_at\": \"2025-08-08 02:51:30\",\n        \"updated_at\": null,\n        \"deleted_at\": null\n    },\n    {\n        \"id\": 10,\n        \"verse\": \"Proverbs 3:5\",\n        \"content\": \"Trust in the Lord with all your heart and lean not on your own understanding.\",\n        \"created_at\": \"2025-08-08 02:51:30\",\n        \"updated_at\": null,\n        \"deleted_at\": null\n    },\n    {\n        \"id\": 11,\n        \"verse\": \"Isaiah 40:31\",\n        \"content\": \"But those who hope in the Lord will renew their strength.\",\n        \"created_at\": \"2025-08-08 02:51:30\",\n        \"updated_at\": null,\n        \"deleted_at\": null\n    },\n    {\n        \"id\": 5,\n        \"verse\": \"John 3:16\",\n        \"content\": \"God loved the world\",\n        \"created_at\": \"2025-08-06 14:50:41\",\n        \"updated_at\": null,\n        \"deleted_at\": null\n    },\n    {\n        \"id\": 4,\n        \"verse\": \"John 3:16\",\n        \"content\": \"God loved the world\",\n        \"created_at\": \"2025-08-06 14:26:16\",\n        \"updated_at\": null,\n        \"deleted_at\": null\n    },\n    {\n        \"id\": 2,\n        \"verse\": \"John 3:16\",\n        \"content\": \"For God so loved the world...\",\n        \"created_at\": \"2025-08-06 14:25:29\",\n        \"updated_at\": null,\n        \"deleted_at\": null\n    },\n    {\n        \"id\": 1,\n        \"verse\": \"John 3:16\",\n        \"content\": \"God loved the world\",\n        \"created_at\": \"2025-08-06 08:47:09\",\n        \"updated_at\": null,\n        \"deleted_at\": null\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "patch devotional",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

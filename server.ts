@@ -64,6 +64,32 @@ app.get('/api/devotionals/:id', (req: Request, res: Response) => {
   }
 });
 
+//update a devotional
+app.patch('/api/devotionals/:id', (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const { verse, content } = req.body;
+
+    if (!verse || !content) {
+      return res.status(400).json({ error: 'Verse and content are required.' });
+    }
+
+    const statement = db.prepare(
+      'UPDATE devotionals SET verse = ?, content = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ? AND deleted_at IS NULL'
+    );
+    const result = statement.run(verse, content, id);
+
+    if (result.changes === 0) {
+      return res.status(404).json({ error: 'Devotional not found or already deleted.' });
+    }
+
+    res.json({ message: 'Devotional updated successfully.' });
+  } catch (error) {
+   res.status(500).json({ error: 'Failed to update devotional.' });
+   }
+});
+
+
 //Create a devotional
 app.post('/api/devotionals', (req: Request, res: Response) => {
   try {
